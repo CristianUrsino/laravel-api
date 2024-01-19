@@ -1,0 +1,137 @@
+@use './partials/variables' as *;
+
+$fa-font-path: "../fonts/webfonts" !default;
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import '~bootstrap/scss/bootstrap';
+
+img{
+    width: 100%;
+}
+/* .debug{
+    border: 1px solid red;
+} */
+/* ****************UTILITIES*************** */
+.my-btn{
+    background-color: $my-btn-color;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    padding: 3px 7px;
+    border: none;
+    line-height: 100%;
+}
+.my-btn-square{
+    background-color: transparent;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #808080;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-left: 5px;
+    line-height: 100%;
+    padding: 0 0 3px 0;
+    color: #808080;
+}
+.border-none{
+    border: none !important;
+}
+.bg-primary{
+    background-color: $my-primary;
+}
+.bg-gray{
+    background-color: $my-gray;
+}
+.bg-green{
+    background-color: #198754;
+}
+.bg-yellow{
+    background-color: #ffc107;
+}
+.bg-red{
+    background-color: #dc3545;
+}
+/* *************STUCTURE************* */
+#dashboard{
+    width: 100%;
+    height: 100vh;
+    background-color: #F8F9FA;
+}
+#dashboard header{
+    width: 100%;
+    height: 70px;
+}
+#dashboard main{
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+}
+#dashboard #sidebar{
+    height: 100%;
+    background-color: $my-dark;
+    background-image: url(img/sidebar-bg.png);
+}
+#dashboard #main-content{
+    overflow-y:auto ;
+    flex-grow: 1;
+}
+/* sidebar */
+#dashboard #sidebar i{
+    display: inline-block;
+    width: 15px;
+}
+#dashboard #sidebar>div>div{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+#dashboard #sidebar>div>div:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+/*header*/
+#dashboard header figure{
+    margin: 0;
+}
+#dashboard #header-dropdown{
+    background-color: #fff;
+   border: none;
+   color:#ff8f00;
+   padding: 0;
+}
+#dashboard header i{
+    cursor: pointer;
+}
+/* main nav */
+@media screen AND (max-width:768px){
+    #dashboard #main-nav #offcanvasScrolling{
+        width: 100%;
+    }
+}
+#dashboard #main-nav .my-btn.circle{
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 0 0 1px 0;
+}
+/* first main div */
+#dashboard #prossime-classi th{
+    font-weight: normal ;
+}
+#dashboard #prossime-class th:first-of-type,td:first-child{
+    width: 40%;
+}
+#dashboard i.circle{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #f26551;
+    color: white;
+}
