@@ -7,6 +7,40 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# TRACCIA
+Iniziamo con il definire il layout, modello, migrazione, controller e rotte necessarie per il sistema portfolio:
+- Autenticazione: si parte con l'autenticazione e la creazione di un layout per back-office
+- Creazione del modello `Project` con relativa migrazione, seeder, controller, validazioni e rotte
+- Per la parte di back-office creiamo un resource controller `Admin\ProjectController` per gestire tutte le operazioni CRUD dei progetti
+- Implementare la visualizzazione dei dati nella index dei progetti con una tabella (con bottoni per show, edit, e delete)
+### PARTE ONE-TO-MANY
+- creare la migration per la tabella types
+- creare il model Type
+- creare la migration di modifica per la tabella projects per aggiungere la chiave esterna
+- aggiungere ai model Type e Project i metodi per definire la relazione one to many
+- visualizzare nella pagina di dettaglio di un progetto la tipologia associata, se presente
+- permettere all’utente di associare una tipologia nella pagina di creazione e modifica di un progetto
+- gestire il salvataggio dell’associazione progetto-tipologia con opportune regole di validazione
+* Bonus 1:
+creare il seeder per il model Type.
+* Bonus 2:
+aggiungere le operazioni CRUD per il model Type, in modo da gestire le tipologie di progetto direttamente dal pannello di amministrazione.
+### PARTE MANY-TO-MANY
+- creare la migration per la tabella technologies
+- creare il model Technology
+- creare la migration per la tabella pivot project_technology
+- aggiungere ai model Technology e Project i metodi per definire la relazione many to many
+- visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti
+- permettere all’utente di associare le tecnologie nella pagina di creazione e modifica di un progetto
+- gestire il salvataggio dell’associazione progetto-tecnologie con opportune regole di validazione
+*Bonus 1: creare il seeder per il model Technology.
+*Bonus 2:aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tecnologie utilizzate nei progetti direttamente dal pannello di amministrazione.
+### PARTE API
+- Aggiungiamo al nostro progetto Laravel una nuovo Api/ProjectController. Questo controller risponderà a delle richieste via API e si occuperà di restituire la lista dei progetti presenti nel database in formato json.
+- Testiamo la chiamata API tramite browser e assicuriamoci di ricevere i dati correttamente.
+- Progettiamo il nostro front-office (aiutandoci con figma) per farci un'idea di quali end-point API avremo bisogno
+* Bonus :se volete preparate una nuova repo (nome repo: vite-boolfolio) e iniziamo ad occuparci della parte front-office della nostra applicazione facendo qualche test: creiamo un nuovo progetto Vue 3 con Vite e installiamo axios. Colleghiamo questo progetto alla repo separata creata.
+
 ## Installazione Laravel
 
 ```bash
